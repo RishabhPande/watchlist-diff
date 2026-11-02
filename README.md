@@ -4,9 +4,10 @@ A dated log of changes to public sanctions watchlists - starting with OFAC's
 SDN and Non-SDN lists - with each change converted into regression fixtures for
 name-matching and screening systems.
 
-> **Status: starter draft.** Fixtures and two hand-written change entries only.
-> There is no diff implementation, no test harness, and no monitoring yet. The
-> update model below is the plan, to start only once the owner turns it on.
+> **Status: active since Nov 2, 2026.** Fixtures and two hand-written change
+> entries; there is no diff implementation and no test harness yet. The sources
+> below are checked daily, with entries added when real list changes occur,
+> through pull requests reviewed by the owner.
 
 ## What this is
 
@@ -41,11 +42,10 @@ same identity - and may remain designated under other programs or lists - so a
 delisting fixture asserts only "not on list X as of date Y", never that the
 party is universally clear.
 
-## Planned update model
+## Update model
 
-OFAC updates on no fixed timetable. Once activated, the sources below would be
-checked daily, with entries added when real list changes occur. No changes, no
-commits.
+OFAC updates on no fixed timetable. The sources below are checked daily, with
+entries added when real list changes occur. No changes, no commits.
 
 ## Sources (primary only)
 
