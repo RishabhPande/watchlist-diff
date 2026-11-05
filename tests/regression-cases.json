@@ -158,6 +158,71 @@
         "state": "not_listed"
       },
       "why": "Deleted under [BELARUS]; three SDN records (RYBAKOV, RYBAKOU Aliakseevich, RYBAKOU) for one person with cross-listed a.k.a. spellings. Tests that every variant record is removed, not just one. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
+    },
+    {
+      "id": "WLD-2026-11-04-001",
+      "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261104",
+      "list": "SDN",
+      "assertion": "entity_match",
+      "query": "FUGO AVIATION",
+      "query_kind": "listed_alias",
+      "expected_party": "FUGO GROUND SERVICES INC",
+      "why": "Exact a.k.a. quoted in the notice. The entry also prints a Turkish-script legal name (FUGO YER HİZMETLERİ ANONİM ŞİRKETİ). Tests whether the trade name resolves to the legal entity."
+    },
+    {
+      "id": "WLD-2026-11-04-002",
+      "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261104",
+      "list": "SDN",
+      "assertion": "entity_match",
+      "query": "FUGO YER HİZMETLERİ ANONİM ŞİRKETİ",
+      "query_kind": "listed_native_script_name",
+      "expected_party": "FUGO GROUND SERVICES INC",
+      "why": "Turkish legal name with dotted capital İ, as printed in the notice. Tests Unicode handling, including case-folding of İ."
+    },
+    {
+      "id": "WLD-2026-11-04-003",
+      "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261104",
+      "list": "SDN",
+      "assertion": "list_membership",
+      "query": "SHARMA, Suniel",
+      "query_kind": "listed_alias",
+      "expected_party": "SHARMA, Suniel Kumar",
+      "expected_membership": {
+        "list": "SDN",
+        "as_of": "2026-11-04",
+        "state": "listed"
+      },
+      "why": "Individual added under [IRAN-EO13902] on 2026-11-04 with an unusually long website list on the entry. Asserts only: listed on the SDN List as of 2026-11-04 per this notice. Says nothing about other lists."
+    },
+    {
+      "id": "WLD-2026-11-04-004",
+      "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261104",
+      "list": "SDN",
+      "assertion": "list_membership",
+      "query": "DOMULLODZHANOV, Alisher Hairulloevich",
+      "query_kind": "listed_alias",
+      "expected_party": "DOMULLODZHANOV, Alisher",
+      "expected_membership": {
+        "list": "SDN",
+        "as_of": "2026-11-04",
+        "state": "listed"
+      },
+      "why": "Individual added under [IRAN-CON-ARMS-EO] on 2026-11-04, with a long-form a.k.a. patronymic. Asserts only: listed on the SDN List as of 2026-11-04 per this notice."
+    },
+    {
+      "id": "WLD-2026-11-04-005",
+      "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261104",
+      "list": "SDN",
+      "assertion": "entity_match",
+      "query": "FANAP INFRASTRUCTURE",
+      "query_kind": "listed_alias",
+      "expected_party": "ARIAN PASARGAD COMMUNICATIONS AND INFORMATION TECHNOLOGY INFRASTRUCTURE COMPANY",
+      "why": "Existing SDN entry amended in this notice (updated entry adds secondary-sanctions text). Tests that an alias on an amended record still resolves after the update, and that amendments do not drop aliases."
     }
   ],
   "planned_case_kinds": [
