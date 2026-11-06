@@ -223,6 +223,71 @@
       "query_kind": "listed_alias",
       "expected_party": "ARIAN PASARGAD COMMUNICATIONS AND INFORMATION TECHNOLOGY INFRASTRUCTURE COMPANY",
       "why": "Existing SDN entry amended in this notice (updated entry adds secondary-sanctions text). Tests that an alias on an amended record still resolves after the update, and that amendments do not drop aliases."
+    },
+    {
+      "id": "WLD-2026-11-05-001",
+      "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261105",
+      "list": "SDN",
+      "assertion": "entity_match",
+      "query": "北京华成昊普科技有限公司",
+      "query_kind": "listed_native_script_name",
+      "expected_party": "BEIJING H AND C TECHNOLOGIES CO., LTD",
+      "why": "Chinese Simplified form printed on the new [CUBA-EO14404] entry. Tests native-script resolution to the romanized legal name."
+    },
+    {
+      "id": "WLD-2026-11-05-002",
+      "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261105",
+      "list": "SDN",
+      "assertion": "entity_match",
+      "query": "\"PANG, Wei Zei\"",
+      "query_kind": "listed_alias",
+      "expected_party": "PANG, Visal",
+      "why": "Quoted a.k.a. on the new [TCO] entry (notice wraps this alias in double quotes). Tests whether the quoted form resolves to the primary name."
+    },
+    {
+      "id": "WLD-2026-11-05-003",
+      "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261105",
+      "list": "SDN",
+      "assertion": "list_membership",
+      "query": "MARIA CRISTINA",
+      "query_kind": "listed_name",
+      "expected_party": "MARIA CRISTINA",
+      "expected_membership": {
+        "list": "SDN",
+        "as_of": "2026-11-05",
+        "state": "listed"
+      },
+      "why": "Vessel renamed from CARLOTA C in this notice (same IMO 9502453, flag change Panama to Cuba). Asserts only: listed on the SDN List as of 2026-11-05 per this notice, under the new name."
+    },
+    {
+      "id": "WLD-2026-11-05-004",
+      "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261105",
+      "list": "SDN",
+      "assertion": "list_membership",
+      "query": "CHUI, Kok Wa",
+      "query_kind": "listed_name",
+      "expected_party": "CHUI, Kok Wa",
+      "expected_membership": {
+        "list": "SDN",
+        "as_of": "2026-11-05",
+        "state": "listed"
+      },
+      "why": "Individual added under [CYBER4] on 2026-11-05, Antananarivo, Madagascar. Asserts only: listed on the SDN List as of 2026-11-05 per this notice."
+    },
+    {
+      "id": "WLD-2026-11-05-005",
+      "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261105",
+      "list": "SDN",
+      "assertion": "entity_match",
+      "query": "FRISIAN FAITH SHIPPING COMPANY LIMITED",
+      "query_kind": "listed_alias",
+      "expected_party": "CAROIL TRANSPORT MARINE LTD",
+      "why": "New a.k.a. added by an amendment in this notice. Tests that aliases introduced by amendments resolve to the existing party."
     }
   ],
   "planned_case_kinds": [
