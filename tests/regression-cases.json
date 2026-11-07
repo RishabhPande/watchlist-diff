@@ -288,6 +288,71 @@
       "query_kind": "listed_alias",
       "expected_party": "CAROIL TRANSPORT MARINE LTD",
       "why": "New a.k.a. added by an amendment in this notice. Tests that aliases introduced by amendments resolve to the existing party."
+    },
+    {
+      "id": "WLD-2026-11-06-001",
+      "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261106",
+      "list": "SDN",
+      "assertion": "entity_match",
+      "query": "C EXCHANEG",
+      "query_kind": "listed_alias",
+      "expected_party": "B GALAXY INC",
+      "why": "Misspelled alias as printed on the notice (EXCHANEG for EXCHANGE). Exact-string coverage of a typo'd listed alias; not a test of typo tolerance."
+    },
+    {
+      "id": "WLD-2026-11-06-002",
+      "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261106",
+      "list": "SDN",
+      "assertion": "entity_match",
+      "query": "\"SALAM EXCHANGE\"",
+      "query_kind": "listed_alias",
+      "expected_party": "CCC INC",
+      "why": "Quoted a.k.a. on the new CCC INC entry. Note: CRYPTOYAL and \"C EXCHANGE\" also appear on B GALAXY INC, so some aliases in this action are shared by two listed parties; this one is unique to CCC INC."
+    },
+    {
+      "id": "WLD-2026-11-06-003",
+      "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261106",
+      "list": "SDN",
+      "assertion": "list_membership",
+      "query": "AMIN EXCHANGE VANCOUVER",
+      "query_kind": "listed_alias",
+      "expected_party": "1380079 BC LTD",
+      "expected_membership": {
+        "list": "SDN",
+        "as_of": "2026-11-06",
+        "state": "listed"
+      },
+      "why": "Trade-name alias of a numbered company added under [IRAN-EO13902] on 2026-11-06 (Canadian MSB, TRX addresses on entry). Asserts only: listed on the SDN List as of 2026-11-06 per this notice."
+    },
+    {
+      "id": "WLD-2026-11-06-004",
+      "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261106",
+      "list": "SDN",
+      "assertion": "list_membership",
+      "query": "DARVISH EXCHANGE",
+      "query_kind": "listed_name",
+      "expected_party": "DARVISH EXCHANGE",
+      "expected_membership": {
+        "list": "SDN",
+        "as_of": "2026-11-06",
+        "state": "listed"
+      },
+      "why": "Primary name added under [IRAN-EO13902] on 2026-11-06. Asserts only: listed on the SDN List as of 2026-11-06 per this notice."
+    },
+    {
+      "id": "WLD-2026-11-06-005",
+      "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
+      "source": "https://ofac.treasury.gov/recent-actions/20261106",
+      "list": "SDN",
+      "assertion": "entity_match",
+      "query": "2840711 ONTARIO INC",
+      "query_kind": "listed_alias",
+      "expected_party": "TOP PC TECHNICIAN INC",
+      "why": "Numbered-company a.k.a. resolving to a trade-name primary (reverse of case 003). Tests that a legal-numbered alias reaches the operating name."
     }
   ],
   "planned_case_kinds": [
