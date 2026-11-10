@@ -1,361 +1,399 @@
 {
-  "description": "Fixtures derived from real OFAC list changes, for a future test harness (no harness exists yet). Two assertion kinds, kept separate: 'entity_match' asks whether the query resolves to the same party; 'list_membership' asks whether that party is on a specific list as of a date - a delisting asserts only 'not on list X as of date Y', never universal clearance, since other designations or lists may persist. Queries marked synthetic are constructed variants with no expected-result oracle.",
-  "cases": [
-    {
-      "id": "WLD-2026-10-28-001",
-      "change": "changes/2026-10-28-sdn-dprk-drc.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261028",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "HAN, Yu-so'ng",
-      "query_kind": "listed_alias",
-      "expected_party": "HAN, Yu Song",
-      "why": "Exact a.k.a. quoted in the notice (apostrophe transliteration). Tests whether this alias string is covered."
-    },
-    {
-      "id": "WLD-2026-10-28-002",
-      "change": "changes/2026-10-28-sdn-dprk-drc.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261028",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "KIM, Hyo-tong",
-      "query_kind": "listed_alias",
-      "expected_party": "KIM, Hyo Dong",
-      "why": "Exact a.k.a. quoted in the notice; syllable split differs from the primary name."
-    },
-    {
-      "id": "WLD-2026-10-28-003",
-      "change": "changes/2026-10-28-sdn-dprk-drc.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261028",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "김효동",
-      "query_kind": "listed_native_script_name",
-      "expected_party": "KIM, Hyo Dong",
-      "why": "Exact Hangul form printed on the entry. Tests whether the native-script string is indexed. This is an exact-alias lookup, not evidence of cross-script matching."
-    },
-    {
-      "id": "WLD-2026-10-28-004",
-      "change": "changes/2026-10-28-sdn-dprk-drc.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261028",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "MINADEF OF THE REPUBLIC OF RWANDA",
-      "query_kind": "listed_alias",
-      "expected_party": "MINISTRY OF DEFENCE OF THE REPUBLIC OF RWANDA",
-      "why": "Exact a.k.a. quoted in the notice (acronym-based alias, full form)."
-    },
-    {
-      "id": "WLD-2026-10-28-005",
-      "change": "changes/2026-10-28-sdn-dprk-drc.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261028",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "MINADEF",
-      "query_kind": "synthetic",
-      "expected_party": null,
-      "why": "Constructed abbreviation, NOT a listed alias. Ambiguous acronym; included only to observe matcher behavior, with no expected-result oracle."
-    },
-    {
-      "id": "WLD-2026-10-28-006",
-      "change": "changes/2026-10-28-sdn-dprk-drc.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261028",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "ZIGAMA CSS",
-      "query_kind": "listed_alias",
-      "expected_party": "ZIGAMA CREDIT AND SAVINGS SOCIETY",
-      "why": "Exact a.k.a. quoted in the notice as \"ZIGAMA CSS\"."
-    },
-    {
-      "id": "WLD-2026-10-19-001",
-      "change": "changes/2026-10-19-ns-mbs-paipa.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261019",
-      "list": "NS-MBS",
-      "assertion": "entity_match",
-      "query": "MIRACLE PLUS RMB FUND I",
-      "query_kind": "listed_alias",
-      "expected_party": "BEIJING QIJI CHUANGTAN PHASE I VENTURE CAPITAL CENTER LIMITED PARTNERSHIP",
-      "why": "Exact a.k.a. quoted in the notice; no lexical overlap with the primary transliterated name."
-    },
-    {
-      "id": "WLD-2026-10-19-002",
-      "change": "changes/2026-10-19-ns-mbs-paipa.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261019",
-      "list": "NS-MBS",
-      "assertion": "entity_match",
-      "query": "北京奇绩创坛一期创业投资中心",
-      "query_kind": "listed_native_script_name",
-      "expected_party": "BEIJING QIJI CHUANGTAN PHASE I VENTURE CAPITAL CENTER LIMITED PARTNERSHIP",
-      "why": "Exact Chinese Simplified name printed on the entry. Tests native-script indexing on NS-MBS entries; exact-alias lookup, not cross-script matching."
-    },
-    {
-      "id": "WLD-2026-10-21-001",
-      "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261021",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "WHALES SHIPPING LINE LLC",
-      "query_kind": "listed_name",
-      "expected_party": "WHALES SHIPPING LINE LLC",
-      "why": "Entity added 2026-10-21 (IRAN-EO13902). Tests that a newly added entity resolves."
-    },
-    {
-      "id": "WLD-2026-10-21-002",
-      "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261021",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "وايلس شيبينغ لاين ذ م م",
-      "query_kind": "listed_native_script_name",
-      "expected_party": "WHALES SHIPPING LINE LLC",
-      "why": "Exact Arabic form printed on the entry. Exact-string lookup only, not evidence of cross-script matching."
-    },
-    {
-      "id": "WLD-2026-10-21-003",
-      "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261021",
-      "list": "SDN",
-      "assertion": "list_membership",
-      "query": "SHANGHAI MOXING CULTURAL MEDIA CO LTD",
-      "query_kind": "listed_name",
-      "expected_party": "SHANGHAI MOXING CULTURAL MEDIA CO LTD",
-      "expected_membership": {
-        "list": "SDN",
-        "as_of": "2026-10-21",
-        "state": "not_listed"
-      },
-      "why": "Deleted under [DPRK3]; the notice lists it also as a.k.a. MOXING CARTOON. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
-    },
-    {
-      "id": "WLD-2026-10-21-004",
-      "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261021",
-      "list": "SDN",
-      "assertion": "list_membership",
-      "query": "上海弘漫动漫设计工作室",
-      "query_kind": "listed_native_script_name",
-      "expected_party": "SHANGHAI HONGMAN ANIMATION DESIGN STUDIO",
-      "expected_membership": {
-        "list": "SDN",
-        "as_of": "2026-10-21",
-        "state": "not_listed"
-      },
-      "why": "Deleted under [DPRK3]; exact Chinese Simplified form printed on the deleted entry. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
-    },
-    {
-      "id": "WLD-2026-10-21-005",
-      "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261021",
-      "list": "SDN",
-      "assertion": "list_membership",
-      "query": "RYBAKOU, Andrei Aliakseevich",
-      "query_kind": "listed_alias",
-      "expected_party": "RYBAKOV, Andrei Alekseevich",
-      "expected_membership": {
-        "list": "SDN",
-        "as_of": "2026-10-21",
-        "state": "not_listed"
-      },
-      "why": "Deleted under [BELARUS]; three SDN records (RYBAKOV, RYBAKOU Aliakseevich, RYBAKOU) for one person with cross-listed a.k.a. spellings. Tests that every variant record is removed, not just one. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
-    },
-    {
-      "id": "WLD-2026-11-04-001",
-      "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261104",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "FUGO AVIATION",
-      "query_kind": "listed_alias",
-      "expected_party": "FUGO GROUND SERVICES INC",
-      "why": "Exact a.k.a. quoted in the notice. The entry also prints a Turkish-script legal name (FUGO YER HİZMETLERİ ANONİM ŞİRKETİ). Tests whether the trade name resolves to the legal entity."
-    },
-    {
-      "id": "WLD-2026-11-04-002",
-      "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261104",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "FUGO YER HİZMETLERİ ANONİM ŞİRKETİ",
-      "query_kind": "listed_native_script_name",
-      "expected_party": "FUGO GROUND SERVICES INC",
-      "why": "Turkish legal name with dotted capital İ, as printed in the notice. Tests Unicode handling, including case-folding of İ."
-    },
-    {
-      "id": "WLD-2026-11-04-003",
-      "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261104",
-      "list": "SDN",
-      "assertion": "list_membership",
-      "query": "SHARMA, Suniel",
-      "query_kind": "listed_alias",
-      "expected_party": "SHARMA, Suniel Kumar",
-      "expected_membership": {
-        "list": "SDN",
-        "as_of": "2026-11-04",
-        "state": "listed"
-      },
-      "why": "Individual added under [IRAN-EO13902] on 2026-11-04 with an unusually long website list on the entry. Asserts only: listed on the SDN List as of 2026-11-04 per this notice. Says nothing about other lists."
-    },
-    {
-      "id": "WLD-2026-11-04-004",
-      "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261104",
-      "list": "SDN",
-      "assertion": "list_membership",
-      "query": "DOMULLODZHANOV, Alisher Hairulloevich",
-      "query_kind": "listed_alias",
-      "expected_party": "DOMULLODZHANOV, Alisher",
-      "expected_membership": {
-        "list": "SDN",
-        "as_of": "2026-11-04",
-        "state": "listed"
-      },
-      "why": "Individual added under [IRAN-CON-ARMS-EO] on 2026-11-04, with a long-form a.k.a. patronymic. Asserts only: listed on the SDN List as of 2026-11-04 per this notice."
-    },
-    {
-      "id": "WLD-2026-11-04-005",
-      "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261104",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "FANAP INFRASTRUCTURE",
-      "query_kind": "listed_alias",
-      "expected_party": "ARIAN PASARGAD COMMUNICATIONS AND INFORMATION TECHNOLOGY INFRASTRUCTURE COMPANY",
-      "why": "Existing SDN entry amended in this notice (updated entry adds secondary-sanctions text). Tests that an alias on an amended record still resolves after the update, and that amendments do not drop aliases."
-    },
-    {
-      "id": "WLD-2026-11-05-001",
-      "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261105",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "北京华成昊普科技有限公司",
-      "query_kind": "listed_native_script_name",
-      "expected_party": "BEIJING H AND C TECHNOLOGIES CO., LTD",
-      "why": "Chinese Simplified form printed on the new [CUBA-EO14404] entry. Tests native-script resolution to the romanized legal name."
-    },
-    {
-      "id": "WLD-2026-11-05-002",
-      "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261105",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "\"PANG, Wei Zei\"",
-      "query_kind": "listed_alias",
-      "expected_party": "PANG, Visal",
-      "why": "Quoted a.k.a. on the new [TCO] entry (notice wraps this alias in double quotes). Tests whether the quoted form resolves to the primary name."
-    },
-    {
-      "id": "WLD-2026-11-05-003",
-      "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261105",
-      "list": "SDN",
-      "assertion": "list_membership",
-      "query": "MARIA CRISTINA",
-      "query_kind": "listed_name",
-      "expected_party": "MARIA CRISTINA",
-      "expected_membership": {
-        "list": "SDN",
-        "as_of": "2026-11-05",
-        "state": "listed"
-      },
-      "why": "Vessel renamed from CARLOTA C in this notice (same IMO 9502453, flag change Panama to Cuba). Asserts only: listed on the SDN List as of 2026-11-05 per this notice, under the new name."
-    },
-    {
-      "id": "WLD-2026-11-05-004",
-      "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261105",
-      "list": "SDN",
-      "assertion": "list_membership",
-      "query": "CHUI, Kok Wa",
-      "query_kind": "listed_name",
-      "expected_party": "CHUI, Kok Wa",
-      "expected_membership": {
-        "list": "SDN",
-        "as_of": "2026-11-05",
-        "state": "listed"
-      },
-      "why": "Individual added under [CYBER4] on 2026-11-05, Antananarivo, Madagascar. Asserts only: listed on the SDN List as of 2026-11-05 per this notice."
-    },
-    {
-      "id": "WLD-2026-11-05-005",
-      "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261105",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "FRISIAN FAITH SHIPPING COMPANY LIMITED",
-      "query_kind": "listed_alias",
-      "expected_party": "CAROIL TRANSPORT MARINE LTD",
-      "why": "New a.k.a. added by an amendment in this notice. Tests that aliases introduced by amendments resolve to the existing party."
-    },
-    {
-      "id": "WLD-2026-11-06-001",
-      "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261106",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "C EXCHANEG",
-      "query_kind": "listed_alias",
-      "expected_party": "B GALAXY INC",
-      "why": "Misspelled alias as printed on the notice (EXCHANEG for EXCHANGE). Exact-string coverage of a typo'd listed alias; not a test of typo tolerance."
-    },
-    {
-      "id": "WLD-2026-11-06-002",
-      "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261106",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "\"SALAM EXCHANGE\"",
-      "query_kind": "listed_alias",
-      "expected_party": "CCC INC",
-      "why": "Quoted a.k.a. on the new CCC INC entry. Note: CRYPTOYAL and \"C EXCHANGE\" also appear on B GALAXY INC, so some aliases in this action are shared by two listed parties; this one is unique to CCC INC."
-    },
-    {
-      "id": "WLD-2026-11-06-003",
-      "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261106",
-      "list": "SDN",
-      "assertion": "list_membership",
-      "query": "AMIN EXCHANGE VANCOUVER",
-      "query_kind": "listed_alias",
-      "expected_party": "1380079 BC LTD",
-      "expected_membership": {
-        "list": "SDN",
-        "as_of": "2026-11-06",
-        "state": "listed"
-      },
-      "why": "Trade-name alias of a numbered company added under [IRAN-EO13902] on 2026-11-06 (Canadian MSB, TRX addresses on entry). Asserts only: listed on the SDN List as of 2026-11-06 per this notice."
-    },
-    {
-      "id": "WLD-2026-11-06-004",
-      "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261106",
-      "list": "SDN",
-      "assertion": "list_membership",
-      "query": "DARVISH EXCHANGE",
-      "query_kind": "listed_name",
-      "expected_party": "DARVISH EXCHANGE",
-      "expected_membership": {
-        "list": "SDN",
-        "as_of": "2026-11-06",
-        "state": "listed"
-      },
-      "why": "Primary name added under [IRAN-EO13902] on 2026-11-06. Asserts only: listed on the SDN List as of 2026-11-06 per this notice."
-    },
-    {
-      "id": "WLD-2026-11-06-005",
-      "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
-      "source": "https://ofac.treasury.gov/recent-actions/20261106",
-      "list": "SDN",
-      "assertion": "entity_match",
-      "query": "2840711 ONTARIO INC",
-      "query_kind": "listed_alias",
-      "expected_party": "TOP PC TECHNICIAN INC",
-      "why": "Numbered-company a.k.a. resolving to a trade-name primary (reverse of case 003). Tests that a legal-numbered alias reaches the operating name."
-    }
-  ],
-  "planned_case_kinds": [
-    "list_membership: delisting fixtures asserting 'not on list X as of date Y' for removed parties, once a removal appears in a covered action"
-  ]
+ "description": "Fixtures derived from real OFAC list changes, for a future test harness (no harness exists yet). Two assertion kinds, kept separate: 'entity_match' asks whether the query resolves to the same party; 'list_membership' asks whether that party is on a specific list as of a date - a delisting asserts only 'not on list X as of date Y', never universal clearance, since other designations or lists may persist. Queries marked synthetic are constructed variants with no expected-result oracle.",
+ "cases": [
+  {
+   "id": "WLD-2026-10-28-001",
+   "change": "changes/2026-10-28-sdn-dprk-drc.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261028",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "HAN, Yu-so'ng",
+   "query_kind": "listed_alias",
+   "expected_party": "HAN, Yu Song",
+   "why": "Exact a.k.a. quoted in the notice (apostrophe transliteration). Tests whether this alias string is covered."
+  },
+  {
+   "id": "WLD-2026-10-28-002",
+   "change": "changes/2026-10-28-sdn-dprk-drc.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261028",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "KIM, Hyo-tong",
+   "query_kind": "listed_alias",
+   "expected_party": "KIM, Hyo Dong",
+   "why": "Exact a.k.a. quoted in the notice; syllable split differs from the primary name."
+  },
+  {
+   "id": "WLD-2026-10-28-003",
+   "change": "changes/2026-10-28-sdn-dprk-drc.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261028",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "김효동",
+   "query_kind": "listed_native_script_name",
+   "expected_party": "KIM, Hyo Dong",
+   "why": "Exact Hangul form printed on the entry. Tests whether the native-script string is indexed. This is an exact-alias lookup, not evidence of cross-script matching."
+  },
+  {
+   "id": "WLD-2026-10-28-004",
+   "change": "changes/2026-10-28-sdn-dprk-drc.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261028",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "MINADEF OF THE REPUBLIC OF RWANDA",
+   "query_kind": "listed_alias",
+   "expected_party": "MINISTRY OF DEFENCE OF THE REPUBLIC OF RWANDA",
+   "why": "Exact a.k.a. quoted in the notice (acronym-based alias, full form)."
+  },
+  {
+   "id": "WLD-2026-10-28-005",
+   "change": "changes/2026-10-28-sdn-dprk-drc.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261028",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "MINADEF",
+   "query_kind": "synthetic",
+   "expected_party": null,
+   "why": "Constructed abbreviation, NOT a listed alias. Ambiguous acronym; included only to observe matcher behavior, with no expected-result oracle."
+  },
+  {
+   "id": "WLD-2026-10-28-006",
+   "change": "changes/2026-10-28-sdn-dprk-drc.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261028",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "ZIGAMA CSS",
+   "query_kind": "listed_alias",
+   "expected_party": "ZIGAMA CREDIT AND SAVINGS SOCIETY",
+   "why": "Exact a.k.a. quoted in the notice as \"ZIGAMA CSS\"."
+  },
+  {
+   "id": "WLD-2026-10-19-001",
+   "change": "changes/2026-10-19-ns-mbs-paipa.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261019",
+   "list": "NS-MBS",
+   "assertion": "entity_match",
+   "query": "MIRACLE PLUS RMB FUND I",
+   "query_kind": "listed_alias",
+   "expected_party": "BEIJING QIJI CHUANGTAN PHASE I VENTURE CAPITAL CENTER LIMITED PARTNERSHIP",
+   "why": "Exact a.k.a. quoted in the notice; no lexical overlap with the primary transliterated name."
+  },
+  {
+   "id": "WLD-2026-10-19-002",
+   "change": "changes/2026-10-19-ns-mbs-paipa.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261019",
+   "list": "NS-MBS",
+   "assertion": "entity_match",
+   "query": "北京奇绩创坛一期创业投资中心",
+   "query_kind": "listed_native_script_name",
+   "expected_party": "BEIJING QIJI CHUANGTAN PHASE I VENTURE CAPITAL CENTER LIMITED PARTNERSHIP",
+   "why": "Exact Chinese Simplified name printed on the entry. Tests native-script indexing on NS-MBS entries; exact-alias lookup, not cross-script matching."
+  },
+  {
+   "id": "WLD-2026-10-21-001",
+   "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261021",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "WHALES SHIPPING LINE LLC",
+   "query_kind": "listed_name",
+   "expected_party": "WHALES SHIPPING LINE LLC",
+   "why": "Entity added 2026-10-21 (IRAN-EO13902). Tests that a newly added entity resolves."
+  },
+  {
+   "id": "WLD-2026-10-21-002",
+   "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261021",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "وايلس شيبينغ لاين ذ م م",
+   "query_kind": "listed_native_script_name",
+   "expected_party": "WHALES SHIPPING LINE LLC",
+   "why": "Exact Arabic form printed on the entry. Exact-string lookup only, not evidence of cross-script matching."
+  },
+  {
+   "id": "WLD-2026-10-21-003",
+   "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261021",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "SHANGHAI MOXING CULTURAL MEDIA CO LTD",
+   "query_kind": "listed_name",
+   "expected_party": "SHANGHAI MOXING CULTURAL MEDIA CO LTD",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-10-21",
+    "state": "not_listed"
+   },
+   "why": "Deleted under [DPRK3]; the notice lists it also as a.k.a. MOXING CARTOON. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
+  },
+  {
+   "id": "WLD-2026-10-21-004",
+   "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261021",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "上海弘漫动漫设计工作室",
+   "query_kind": "listed_native_script_name",
+   "expected_party": "SHANGHAI HONGMAN ANIMATION DESIGN STUDIO",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-10-21",
+    "state": "not_listed"
+   },
+   "why": "Deleted under [DPRK3]; exact Chinese Simplified form printed on the deleted entry. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
+  },
+  {
+   "id": "WLD-2026-10-21-005",
+   "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261021",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "RYBAKOU, Andrei Aliakseevich",
+   "query_kind": "listed_alias",
+   "expected_party": "RYBAKOV, Andrei Alekseevich",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-10-21",
+    "state": "not_listed"
+   },
+   "why": "Deleted under [BELARUS]; three SDN records (RYBAKOV, RYBAKOU Aliakseevich, RYBAKOU) for one person with cross-listed a.k.a. spellings. Tests that every variant record is removed, not just one. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
+  },
+  {
+   "id": "WLD-2026-11-04-001",
+   "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261104",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "FUGO AVIATION",
+   "query_kind": "listed_alias",
+   "expected_party": "FUGO GROUND SERVICES INC",
+   "why": "Exact a.k.a. quoted in the notice. The entry also prints a Turkish-script legal name (FUGO YER HİZMETLERİ ANONİM ŞİRKETİ). Tests whether the trade name resolves to the legal entity."
+  },
+  {
+   "id": "WLD-2026-11-04-002",
+   "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261104",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "FUGO YER HİZMETLERİ ANONİM ŞİRKETİ",
+   "query_kind": "listed_native_script_name",
+   "expected_party": "FUGO GROUND SERVICES INC",
+   "why": "Turkish legal name with dotted capital İ, as printed in the notice. Tests Unicode handling, including case-folding of İ."
+  },
+  {
+   "id": "WLD-2026-11-04-003",
+   "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261104",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "SHARMA, Suniel",
+   "query_kind": "listed_alias",
+   "expected_party": "SHARMA, Suniel Kumar",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-04",
+    "state": "listed"
+   },
+   "why": "Individual added under [IRAN-EO13902] on 2026-11-04 with an unusually long website list on the entry. Asserts only: listed on the SDN List as of 2026-11-04 per this notice. Says nothing about other lists."
+  },
+  {
+   "id": "WLD-2026-11-04-004",
+   "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261104",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "DOMULLODZHANOV, Alisher Hairulloevich",
+   "query_kind": "listed_alias",
+   "expected_party": "DOMULLODZHANOV, Alisher",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-04",
+    "state": "listed"
+   },
+   "why": "Individual added under [IRAN-CON-ARMS-EO] on 2026-11-04, with a long-form a.k.a. patronymic. Asserts only: listed on the SDN List as of 2026-11-04 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-04-005",
+   "change": "changes/2026-11-04-sdn-iran-designations-and-listing-updates.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261104",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "FANAP INFRASTRUCTURE",
+   "query_kind": "listed_alias",
+   "expected_party": "ARIAN PASARGAD COMMUNICATIONS AND INFORMATION TECHNOLOGY INFRASTRUCTURE COMPANY",
+   "why": "Existing SDN entry amended in this notice (updated entry adds secondary-sanctions text). Tests that an alias on an amended record still resolves after the update, and that amendments do not drop aliases."
+  },
+  {
+   "id": "WLD-2026-11-05-001",
+   "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261105",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "北京华成昊普科技有限公司",
+   "query_kind": "listed_native_script_name",
+   "expected_party": "BEIJING H AND C TECHNOLOGIES CO., LTD",
+   "why": "Chinese Simplified form printed on the new [CUBA-EO14404] entry. Tests native-script resolution to the romanized legal name."
+  },
+  {
+   "id": "WLD-2026-11-05-002",
+   "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261105",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "\"PANG, Wei Zei\"",
+   "query_kind": "listed_alias",
+   "expected_party": "PANG, Visal",
+   "why": "Quoted a.k.a. on the new [TCO] entry (notice wraps this alias in double quotes). Tests whether the quoted form resolves to the primary name."
+  },
+  {
+   "id": "WLD-2026-11-05-003",
+   "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261105",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "MARIA CRISTINA",
+   "query_kind": "listed_name",
+   "expected_party": "MARIA CRISTINA",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-05",
+    "state": "listed"
+   },
+   "why": "Vessel renamed from CARLOTA C in this notice (same IMO 9502453, flag change Panama to Cuba). Asserts only: listed on the SDN List as of 2026-11-05 per this notice, under the new name."
+  },
+  {
+   "id": "WLD-2026-11-05-004",
+   "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261105",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "CHUI, Kok Wa",
+   "query_kind": "listed_name",
+   "expected_party": "CHUI, Kok Wa",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-05",
+    "state": "listed"
+   },
+   "why": "Individual added under [CYBER4] on 2026-11-05, Antananarivo, Madagascar. Asserts only: listed on the SDN List as of 2026-11-05 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-05-005",
+   "change": "changes/2026-11-05-sdn-cyber-tco-cuba-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261105",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "FRISIAN FAITH SHIPPING COMPANY LIMITED",
+   "query_kind": "listed_alias",
+   "expected_party": "CAROIL TRANSPORT MARINE LTD",
+   "why": "New a.k.a. added by an amendment in this notice. Tests that aliases introduced by amendments resolve to the existing party."
+  },
+  {
+   "id": "WLD-2026-11-06-001",
+   "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261106",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "C EXCHANEG",
+   "query_kind": "listed_alias",
+   "expected_party": "B GALAXY INC",
+   "why": "Misspelled alias as printed on the notice (EXCHANEG for EXCHANGE). Exact-string coverage of a typo'd listed alias; not a test of typo tolerance."
+  },
+  {
+   "id": "WLD-2026-11-06-002",
+   "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261106",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "\"SALAM EXCHANGE\"",
+   "query_kind": "listed_alias",
+   "expected_party": "CCC INC",
+   "why": "Quoted a.k.a. on the new CCC INC entry. Note: CRYPTOYAL and \"C EXCHANGE\" also appear on B GALAXY INC, so some aliases in this action are shared by two listed parties; this one is unique to CCC INC."
+  },
+  {
+   "id": "WLD-2026-11-06-003",
+   "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261106",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "AMIN EXCHANGE VANCOUVER",
+   "query_kind": "listed_alias",
+   "expected_party": "1380079 BC LTD",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-06",
+    "state": "listed"
+   },
+   "why": "Trade-name alias of a numbered company added under [IRAN-EO13902] on 2026-11-06 (Canadian MSB, TRX addresses on entry). Asserts only: listed on the SDN List as of 2026-11-06 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-06-004",
+   "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261106",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "DARVISH EXCHANGE",
+   "query_kind": "listed_name",
+   "expected_party": "DARVISH EXCHANGE",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-06",
+    "state": "listed"
+   },
+   "why": "Primary name added under [IRAN-EO13902] on 2026-11-06. Asserts only: listed on the SDN List as of 2026-11-06 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-06-005",
+   "change": "changes/2026-11-06-sdn-iran-canadian-msbs.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261106",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "2840711 ONTARIO INC",
+   "query_kind": "listed_alias",
+   "expected_party": "TOP PC TECHNICIAN INC",
+   "why": "Numbered-company a.k.a. resolving to a trade-name primary (reverse of case 003). Tests that a legal-numbered alias reaches the operating name."
+  },
+  {
+   "id": "WLD-2026-11-09-001",
+   "change": "changes/2026-11-09-sdn-volta-alias-update.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261109",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "VOLTA CONTAINER LINE FZCO",
+   "query_kind": "listed_alias",
+   "expected_party": "VOLTA SHIPPING SERVICES LLC",
+   "why": "New FZCO alias introduced by the 2026-11-09 amendment to this Dubai-based [IRAN-EO13902] entry (linked to SHAMKHANI, Mohammad Hossein). Asserts the new alias resolves to the same listed party."
+  },
+  {
+   "id": "WLD-2026-11-09-002",
+   "change": "changes/2026-11-09-sdn-volta-alias-update.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261109",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "VOLTA SHIPPING SERVICES LLC",
+   "query_kind": "listed_name",
+   "expected_party": "VOLTA SHIPPING SERVICES LLC",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-09",
+    "state": "listed"
+   },
+   "why": "Entry amended (alias change) on 2026-11-09; the party remains designated. Asserts only: listed on the SDN List as of 2026-11-09 per this notice - an entry update is not a removal."
+  },
+  {
+   "id": "WLD-2026-11-09-003",
+   "change": "changes/2026-11-09-sdn-volta-alias-update.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261109",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "VOLTA SHIPPING SERVICES FZCO",
+   "query_kind": "superseded_alias",
+   "expected_party": "VOLTA SHIPPING SERVICES LLC",
+   "why": "Alias carried on this party's entry before the 2026-11-09 amendment, which replaced it with VOLTA CONTAINER LINE FZCO. Historical queries using the old alias resolve to the same party, but the string no longer appears on the current entry."
+  }
+ ],
+ "planned_case_kinds": [
+  "list_membership: delisting fixtures asserting 'not on list X as of date Y' for removed parties, once a removal appears in a covered action"
+ ]
 }
