@@ -29,7 +29,7 @@
    "source": "https://ofac.treasury.gov/recent-actions/20261028",
    "list": "SDN",
    "assertion": "entity_match",
-   "query": "김효동",
+   "query": "\uae40\ud6a8\ub3d9",
    "query_kind": "listed_native_script_name",
    "expected_party": "KIM, Hyo Dong",
    "why": "Exact Hangul form printed on the entry. Tests whether the native-script string is indexed. This is an exact-alias lookup, not evidence of cross-script matching."
@@ -84,7 +84,7 @@
    "source": "https://ofac.treasury.gov/recent-actions/20261019",
    "list": "NS-MBS",
    "assertion": "entity_match",
-   "query": "北京奇绩创坛一期创业投资中心",
+   "query": "\u5317\u4eac\u5947\u7ee9\u521b\u575b\u4e00\u671f\u521b\u4e1a\u6295\u8d44\u4e2d\u5fc3",
    "query_kind": "listed_native_script_name",
    "expected_party": "BEIJING QIJI CHUANGTAN PHASE I VENTURE CAPITAL CENTER LIMITED PARTNERSHIP",
    "why": "Exact Chinese Simplified name printed on the entry. Tests native-script indexing on NS-MBS entries; exact-alias lookup, not cross-script matching."
@@ -106,7 +106,7 @@
    "source": "https://ofac.treasury.gov/recent-actions/20261021",
    "list": "SDN",
    "assertion": "entity_match",
-   "query": "وايلس شيبينغ لاين ذ م م",
+   "query": "\u0648\u0627\u064a\u0644\u0633 \u0634\u064a\u0628\u064a\u0646\u063a \u0644\u0627\u064a\u0646 \u0630 \u0645 \u0645",
    "query_kind": "listed_native_script_name",
    "expected_party": "WHALES SHIPPING LINE LLC",
    "why": "Exact Arabic form printed on the entry. Exact-string lookup only, not evidence of cross-script matching."
@@ -133,7 +133,7 @@
    "source": "https://ofac.treasury.gov/recent-actions/20261021",
    "list": "SDN",
    "assertion": "list_membership",
-   "query": "上海弘漫动漫设计工作室",
+   "query": "\u4e0a\u6d77\u5f18\u6f2b\u52a8\u6f2b\u8bbe\u8ba1\u5de5\u4f5c\u5ba4",
    "query_kind": "listed_native_script_name",
    "expected_party": "SHANGHAI HONGMAN ANIMATION DESIGN STUDIO",
    "expected_membership": {
@@ -168,7 +168,7 @@
    "query": "FUGO AVIATION",
    "query_kind": "listed_alias",
    "expected_party": "FUGO GROUND SERVICES INC",
-   "why": "Exact a.k.a. quoted in the notice. The entry also prints a Turkish-script legal name (FUGO YER HİZMETLERİ ANONİM ŞİRKETİ). Tests whether the trade name resolves to the legal entity."
+   "why": "Exact a.k.a. quoted in the notice. The entry also prints a Turkish-script legal name (FUGO YER H\u0130ZMETLER\u0130 ANON\u0130M \u015e\u0130RKET\u0130). Tests whether the trade name resolves to the legal entity."
   },
   {
    "id": "WLD-2026-11-04-002",
@@ -176,10 +176,10 @@
    "source": "https://ofac.treasury.gov/recent-actions/20261104",
    "list": "SDN",
    "assertion": "entity_match",
-   "query": "FUGO YER HİZMETLERİ ANONİM ŞİRKETİ",
+   "query": "FUGO YER H\u0130ZMETLER\u0130 ANON\u0130M \u015e\u0130RKET\u0130",
    "query_kind": "listed_native_script_name",
    "expected_party": "FUGO GROUND SERVICES INC",
-   "why": "Turkish legal name with dotted capital İ, as printed in the notice. Tests Unicode handling, including case-folding of İ."
+   "why": "Turkish legal name with dotted capital \u0130, as printed in the notice. Tests Unicode handling, including case-folding of \u0130."
   },
   {
    "id": "WLD-2026-11-04-003",
@@ -230,7 +230,7 @@
    "source": "https://ofac.treasury.gov/recent-actions/20261105",
    "list": "SDN",
    "assertion": "entity_match",
-   "query": "北京华成昊普科技有限公司",
+   "query": "\u5317\u4eac\u534e\u6210\u660a\u666e\u79d1\u6280\u6709\u9650\u516c\u53f8",
    "query_kind": "listed_native_script_name",
    "expected_party": "BEIJING H AND C TECHNOLOGIES CO., LTD",
    "why": "Chinese Simplified form printed on the new [CUBA-EO14404] entry. Tests native-script resolution to the romanized legal name."
@@ -391,6 +391,87 @@
    "query_kind": "superseded_alias",
    "expected_party": "VOLTA SHIPPING SERVICES LLC",
    "why": "Alias carried on this party's entry before the 2026-11-09 amendment, which replaced it with VOLTA CONTAINER LINE FZCO. Historical queries using the old alias resolve to the same party, but the string no longer appears on the current entry."
+  },
+  {
+   "id": "WLD-2026-11-13-001",
+   "change": "changes/2026-11-13-sdn-narcotics-terrorism-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261113",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "THE LORENZANA CLAN",
+   "query_kind": "listed_alias",
+   "expected_party": "LOS LORENZANAS",
+   "why": "Alias added with the 2026-11-13 designation of this Guatemala-based group ([FTO][SDGT]). Asserts the quoted alias resolves to the listed party."
+  },
+  {
+   "id": "WLD-2026-11-13-002",
+   "change": "changes/2026-11-13-sdn-narcotics-terrorism-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261113",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "LORENZANA DRUG TRAFFICKING ORGANIZATION",
+   "query_kind": "listed_alias",
+   "expected_party": "LOS LORENZANAS",
+   "why": "Descriptive alias published on the 2026-11-13 designation. Asserts this alias string resolves to the listed party."
+  },
+  {
+   "id": "WLD-2026-11-13-003",
+   "change": "changes/2026-11-13-sdn-narcotics-terrorism-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261113",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "LOS LORENZANAS",
+   "query_kind": "listed_name",
+   "expected_party": "LOS LORENZANAS",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-13",
+    "state": "listed"
+   },
+   "why": "New designation on 2026-11-13. Asserts only: listed on the SDN List as of 2026-11-13 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-13-004",
+   "change": "changes/2026-11-13-sdn-narcotics-terrorism-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261113",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "LOS MENDOZA DRUG TRAFFICKING ORGANIZATION",
+   "query_kind": "listed_name",
+   "expected_party": "LOS MENDOZA DRUG TRAFFICKING ORGANIZATION",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-13",
+    "state": "listed"
+   },
+   "why": "New designation on 2026-11-13 (Guatemala; Honduras; Belize; linked to SINALOA CARTEL). Asserts only: listed on the SDN List as of 2026-11-13 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-13-005",
+   "change": "changes/2026-11-13-sdn-narcotics-terrorism-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261113",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "LOS HUISTAS DTO",
+   "query_kind": "superseded_alias",
+   "expected_party": "LOS HUISTAS DRUG TRAFFICKING ORGANIZATION",
+   "why": "Alias carried on this party's entry before the 2026-11-13 change, which republished the entry without it. Historical queries using the old alias resolve to the same party, but the string no longer appears on the current entry."
+  },
+  {
+   "id": "WLD-2026-11-13-006",
+   "change": "changes/2026-11-13-sdn-narcotics-terrorism-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261113",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "LOS HUISTAS DRUG TRAFFICKING ORGANIZATION",
+   "query_kind": "listed_name",
+   "expected_party": "LOS HUISTAS DRUG TRAFFICKING ORGANIZATION",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-13",
+    "state": "listed"
+   },
+   "why": "Entry changed on 2026-11-13 (alias removed; [SDGT] tag and SINALOA CARTEL / CARTEL DE JALISCO NUEVA GENERACION linkages added). Asserts only: listed on the SDN List as of 2026-11-13 per this notice - an entry change is not a removal."
   }
  ],
  "planned_case_kinds": [
