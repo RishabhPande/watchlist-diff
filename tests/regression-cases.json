@@ -29,7 +29,7 @@
    "source": "https://ofac.treasury.gov/recent-actions/20261028",
    "list": "SDN",
    "assertion": "entity_match",
-   "query": "\uae40\ud6a8\ub3d9",
+   "query": "김효동",
    "query_kind": "listed_native_script_name",
    "expected_party": "KIM, Hyo Dong",
    "why": "Exact Hangul form printed on the entry. Tests whether the native-script string is indexed. This is an exact-alias lookup, not evidence of cross-script matching."
@@ -84,7 +84,7 @@
    "source": "https://ofac.treasury.gov/recent-actions/20261019",
    "list": "NS-MBS",
    "assertion": "entity_match",
-   "query": "\u5317\u4eac\u5947\u7ee9\u521b\u575b\u4e00\u671f\u521b\u4e1a\u6295\u8d44\u4e2d\u5fc3",
+   "query": "北京奇绩创坛一期创业投资中心",
    "query_kind": "listed_native_script_name",
    "expected_party": "BEIJING QIJI CHUANGTAN PHASE I VENTURE CAPITAL CENTER LIMITED PARTNERSHIP",
    "why": "Exact Chinese Simplified name printed on the entry. Tests native-script indexing on NS-MBS entries; exact-alias lookup, not cross-script matching."
@@ -106,7 +106,7 @@
    "source": "https://ofac.treasury.gov/recent-actions/20261021",
    "list": "SDN",
    "assertion": "entity_match",
-   "query": "\u0648\u0627\u064a\u0644\u0633 \u0634\u064a\u0628\u064a\u0646\u063a \u0644\u0627\u064a\u0646 \u0630 \u0645 \u0645",
+   "query": "وايلس شيبينغ لاين ذ م م",
    "query_kind": "listed_native_script_name",
    "expected_party": "WHALES SHIPPING LINE LLC",
    "why": "Exact Arabic form printed on the entry. Exact-string lookup only, not evidence of cross-script matching."
@@ -133,7 +133,7 @@
    "source": "https://ofac.treasury.gov/recent-actions/20261021",
    "list": "SDN",
    "assertion": "list_membership",
-   "query": "\u4e0a\u6d77\u5f18\u6f2b\u52a8\u6f2b\u8bbe\u8ba1\u5de5\u4f5c\u5ba4",
+   "query": "上海弘漫动漫设计工作室",
    "query_kind": "listed_native_script_name",
    "expected_party": "SHANGHAI HONGMAN ANIMATION DESIGN STUDIO",
    "expected_membership": {
@@ -168,7 +168,7 @@
    "query": "FUGO AVIATION",
    "query_kind": "listed_alias",
    "expected_party": "FUGO GROUND SERVICES INC",
-   "why": "Exact a.k.a. quoted in the notice. The entry also prints a Turkish-script legal name (FUGO YER H\u0130ZMETLER\u0130 ANON\u0130M \u015e\u0130RKET\u0130). Tests whether the trade name resolves to the legal entity."
+   "why": "Exact a.k.a. quoted in the notice. The entry also prints a Turkish-script legal name (FUGO YER HİZMETLERİ ANONİM ŞİRKETİ). Tests whether the trade name resolves to the legal entity."
   },
   {
    "id": "WLD-2026-11-04-002",
@@ -176,10 +176,10 @@
    "source": "https://ofac.treasury.gov/recent-actions/20261104",
    "list": "SDN",
    "assertion": "entity_match",
-   "query": "FUGO YER H\u0130ZMETLER\u0130 ANON\u0130M \u015e\u0130RKET\u0130",
+   "query": "FUGO YER HİZMETLERİ ANONİM ŞİRKETİ",
    "query_kind": "listed_native_script_name",
    "expected_party": "FUGO GROUND SERVICES INC",
-   "why": "Turkish legal name with dotted capital \u0130, as printed in the notice. Tests Unicode handling, including case-folding of \u0130."
+   "why": "Turkish legal name with dotted capital İ, as printed in the notice. Tests Unicode handling, including case-folding of İ."
   },
   {
    "id": "WLD-2026-11-04-003",
@@ -230,7 +230,7 @@
    "source": "https://ofac.treasury.gov/recent-actions/20261105",
    "list": "SDN",
    "assertion": "entity_match",
-   "query": "\u5317\u4eac\u534e\u6210\u660a\u666e\u79d1\u6280\u6709\u9650\u516c\u53f8",
+   "query": "北京华成昊普科技有限公司",
    "query_kind": "listed_native_script_name",
    "expected_party": "BEIJING H AND C TECHNOLOGIES CO., LTD",
    "why": "Chinese Simplified form printed on the new [CUBA-EO14404] entry. Tests native-script resolution to the romanized legal name."
@@ -472,6 +472,185 @@
     "state": "listed"
    },
    "why": "Entry changed on 2026-11-13 (alias removed; [SDGT] tag and SINALOA CARTEL / CARTEL DE JALISCO NUEVA GENERACION linkages added). Asserts only: listed on the SDN List as of 2026-11-13 per this notice - an entry change is not a removal."
+  },
+  {
+   "id": "WLD-2026-11-18-001",
+   "change": "changes/2026-11-18-sdn-counter-terrorism-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261118",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "SHUMAN, Afif Abd-Al-Rida",
+   "query_kind": "listed_alias",
+   "expected_party": "CHOUMAN, Afif Abdel Rida",
+   "why": "Exact a.k.a. quoted in the notice; surname transliteration differs from the primary name and given-name hyphenation changes."
+  },
+  {
+   "id": "WLD-2026-11-18-002",
+   "change": "changes/2026-11-18-sdn-counter-terrorism-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261118",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "KHASHAN, Hassan Muhammad",
+   "query_kind": "listed_alias",
+   "expected_party": "KHECHEN, Hassan",
+   "why": "Exact a.k.a. quoted in the notice; alias carries a different surname spelling and an extra given name."
+  },
+  {
+   "id": "WLD-2026-11-18-003",
+   "change": "changes/2026-11-18-sdn-counter-terrorism-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261118",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "WA TAAWANOU",
+   "query_kind": "listed_alias",
+   "expected_party": "WA TA'AWANU ASSOCIATION",
+   "why": "Exact a.k.a. quoted in the notice; drops the apostrophe and the ASSOCIATION suffix from the primary name."
+  },
+  {
+   "id": "WLD-2026-11-18-004",
+   "change": "changes/2026-11-18-sdn-counter-terrorism-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261118",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "GOLD GLOBAL COMPANY HASSAN MOHAMAD KHECHEN AND HIS PARTNERS",
+   "query_kind": "listed_alias",
+   "expected_party": "GOLD GLOBAL COMPANY",
+   "why": "Exact a.k.a. quoted in the notice; entity alias embeds a full personal name - tests that this string resolves to the entity, not the individual."
+  },
+  {
+   "id": "WLD-2026-11-18-005",
+   "change": "changes/2026-11-18-sdn-counter-terrorism-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261118",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "SANKARI GOLD KUYUMCULUK TICARET LIMITED SIRKETI",
+   "query_kind": "listed_name",
+   "expected_party": "SANKARI GOLD KUYUMCULUK TICARET LIMITED SIRKETI",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-18",
+    "state": "listed"
+   },
+   "why": "Added on 2026-11-18. Asserts only: listed on the SDN List as of 2026-11-18 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-18-006",
+   "change": "changes/2026-11-18-sdn-counter-terrorism-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261118",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "WA TA'AWANU ASSOCIATION",
+   "query_kind": "listed_name",
+   "expected_party": "WA TA'AWANU ASSOCIATION",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-18",
+    "state": "listed"
+   },
+   "why": "Added on 2026-11-18. Asserts only: listed on the SDN List as of 2026-11-18 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-19-001",
+   "change": "changes/2026-11-19-sdn-narcotics-cyber-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261119",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "U Scelto",
+   "query_kind": "listed_alias",
+   "expected_party": "COMMISSO, Francesco",
+   "why": "Exact a.k.a. quoted in the notice (quoted nickname, Italian dialect). Tests whether nickname aliases are covered."
+  },
+  {
+   "id": "WLD-2026-11-19-002",
+   "change": "changes/2026-11-19-sdn-narcotics-cyber-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261119",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "The Undertaker",
+   "query_kind": "listed_alias",
+   "expected_party": "VESCIO SR., Luigi",
+   "why": "Exact a.k.a. quoted in the notice (English-language nickname). Tests whether this alias string is covered."
+  },
+  {
+   "id": "WLD-2026-11-19-003",
+   "change": "changes/2026-11-19-sdn-narcotics-cyber-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261119",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "DE BERNARDO, Marco Sullivan",
+   "query_kind": "listed_alias",
+   "expected_party": "COFFEN, Marco Francis",
+   "why": "Exact a.k.a. quoted in the notice; alias shares no surname with the primary name."
+  },
+  {
+   "id": "WLD-2026-11-19-004",
+   "change": "changes/2026-11-19-sdn-narcotics-cyber-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261119",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "WA, Saw Shwe",
+   "query_kind": "listed_alias",
+   "expected_party": "WAH, Saw Shwe",
+   "why": "Exact a.k.a. quoted in the notice; alias drops the trailing 'H' from the primary surname."
+  },
+  {
+   "id": "WLD-2026-11-19-005",
+   "change": "changes/2026-11-19-sdn-narcotics-cyber-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261119",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "COMANCHERO OUTLAW MOTORCYCLE GANG",
+   "query_kind": "listed_name",
+   "expected_party": "COMANCHERO OUTLAW MOTORCYCLE GANG",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-19",
+    "state": "listed"
+   },
+   "why": "Added on 2026-11-19. Asserts only: listed on the SDN List as of 2026-11-19 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-19-006",
+   "change": "changes/2026-11-19-sdn-narcotics-cyber-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261119",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "VESCIO FUNERAL HOMES INC.",
+   "query_kind": "listed_name",
+   "expected_party": "VESCIO FUNERAL HOMES INC.",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-19",
+    "state": "listed"
+   },
+   "why": "Added on 2026-11-19; ordinary-business front name. Asserts only: listed on the SDN List as of 2026-11-19 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-19-007",
+   "change": "changes/2026-11-19-sdn-narcotics-cyber-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261119",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "'NDRANGHETA ORGANIZATION",
+   "query_kind": "superseded_name",
+   "expected_party": "'NDRANGHETA",
+   "why": "Entry changed on 2026-11-19: 'NDRANGHETA ORGANIZATION republished as 'NDRANGHETA (Target Type and [ILLICIT-DRUGS-EO14059] tag added, [SDNTK] retained). Historical queries using the superseded name resolve to the same listed party; an entry change is not a removal."
+  },
+  {
+   "id": "WLD-2026-11-19-008",
+   "change": "changes/2026-11-19-sdn-narcotics-cyber-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261119",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "'NDRANGHETA",
+   "query_kind": "listed_name",
+   "expected_party": "'NDRANGHETA",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-19",
+    "state": "listed"
+   },
+   "why": "Entry changed on 2026-11-19 (name shortened from 'NDRANGHETA ORGANIZATION; tags added). Asserts only: listed on the SDN List as of 2026-11-19 per this notice."
   }
  ],
  "planned_case_kinds": [
