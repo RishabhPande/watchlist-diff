@@ -651,6 +651,114 @@
     "state": "listed"
    },
    "why": "Entry changed on 2026-11-19 (name shortened from 'NDRANGHETA ORGANIZATION; tags added). Asserts only: listed on the SDN List as of 2026-11-19 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-20-001",
+   "change": "changes/2026-11-20-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261120",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "ARABNEJAD, Mojtaba",
+   "query_kind": "listed_name",
+   "expected_party": "ARABNEJAD, Mojtaba",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-20",
+    "state": "listed"
+   },
+   "why": "Added on 2026-11-20; linked to MAHAN AIR. Asserts only: listed on the SDN List as of 2026-11-20 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-20-002",
+   "change": "changes/2026-11-20-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261120",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "مجتبی عرب نژاد",
+   "query_kind": "native_script",
+   "expected_party": "ARABNEJAD, Mojtaba",
+   "why": "Arabic-script form printed on the 2026-11-20 entry; native-script queries resolve to the same listed party."
+  },
+  {
+   "id": "WLD-2026-11-20-003",
+   "change": "changes/2026-11-20-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261120",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "BAVAND, Mohammad Javad",
+   "query_kind": "listed_name",
+   "expected_party": "BAVAND, Mohammad Javad",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-20",
+    "state": "listed"
+   },
+   "why": "Added on 2026-11-20. Asserts only: listed on the SDN List as of 2026-11-20 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-20-004",
+   "change": "changes/2026-11-20-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261120",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "محمد جواد باوند",
+   "query_kind": "native_script",
+   "expected_party": "BAVAND, Mohammad Javad",
+   "why": "Arabic-script form printed on the 2026-11-20 entry; native-script queries resolve to the same listed party."
+  },
+  {
+   "id": "WLD-2026-11-20-005",
+   "change": "changes/2026-11-20-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261120",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "SERVATI, Mohammadhossein",
+   "query_kind": "listed_name",
+   "expected_party": "SERVATI, Mohammadhossein",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-20",
+    "state": "listed"
+   },
+   "why": "Added on 2026-11-20; linked to SEPEHR ENERGY JAHAN NAMA PARS COMPANY; entry carries a Dominica passport alongside an Iranian one. Asserts only: listed on the SDN List as of 2026-11-20 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-20-006",
+   "change": "changes/2026-11-20-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261120",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "SARVATI, Mohammad Hosein",
+   "query_kind": "listed_alias",
+   "expected_party": "SERVATI, Mohammadhossein",
+   "why": "Alias on the 2026-11-20 addition; transliteration vowel shift of the primary surname. Alias queries resolve to the same listed party."
+  },
+  {
+   "id": "WLD-2026-11-20-007",
+   "change": "changes/2026-11-20-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261120",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "TAJ, Majid",
+   "query_kind": "listed_name",
+   "expected_party": "TAJ, Majid",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-20",
+    "state": "listed"
+   },
+   "why": "Added on 2026-11-20; short common name with high collision potential. Asserts only: listed on the SDN List as of 2026-11-20 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-20-008",
+   "change": "changes/2026-11-20-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261120",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "مجید تاج",
+   "query_kind": "native_script",
+   "expected_party": "TAJ, Majid",
+   "why": "Arabic-script form printed on the 2026-11-20 entry; native-script queries resolve to the same listed party."
   }
  ],
  "planned_case_kinds": [
