@@ -759,6 +759,104 @@
    "query_kind": "native_script",
    "expected_party": "TAJ, Majid",
    "why": "Arabic-script form printed on the 2026-11-20 entry; native-script queries resolve to the same listed party."
+  },
+  {
+   "id": "WLD-2026-11-23-001",
+   "change": "changes/2026-11-23-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261123",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "ABBASI, Mohammad Hossein",
+   "query_kind": "listed_name",
+   "expected_party": "ABBASI, Mohammad Hossein",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-23",
+    "state": "listed"
+   },
+   "why": "Added on 2026-11-23 (IRAN-EO13902, linked to MELLAT EXCHANGE COMPANY). Asserts only: listed on the SDN List as of 2026-11-23 per this notice."
+  },
+  {
+   "id": "WLD-2026-11-23-002",
+   "change": "changes/2026-11-23-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261123",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "محمد حسین عباسی",
+   "query_kind": "native_script",
+   "expected_party": "ABBASI, Mohammad Hossein",
+   "why": "Arabic-script form printed on the 2026-11-23 entry; native-script queries resolve to the same listed party."
+  },
+  {
+   "id": "WLD-2026-11-23-003",
+   "change": "changes/2026-11-23-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261123",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "FESHKI, Farzad",
+   "query_kind": "listed_alias",
+   "expected_party": "FASHKI, Farzad",
+   "why": "Alias on the 2026-11-23 addition; FASHKI/FESHKI is a vowel-shift transliteration of the primary surname. Alias queries resolve to the same listed party."
+  },
+  {
+   "id": "WLD-2026-11-23-004",
+   "change": "changes/2026-11-23-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261123",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "FESHKI, Mina",
+   "query_kind": "listed_alias",
+   "expected_party": "FASHKI, Mina",
+   "why": "Alias on the 2026-11-23 addition; same surname variant as FASHKI, Farzad but a separate entry. A shared surname does not establish that two queries are the same party."
+  },
+  {
+   "id": "WLD-2026-11-23-005",
+   "change": "changes/2026-11-23-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261123",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "ZANA INTERNATIONAL DMCC",
+   "query_kind": "listed_alias",
+   "expected_party": "DEXTEROUS GLOBAL DMCC",
+   "why": "Alias on the 2026-11-23 entity addition; an a.k.a. with a different trading name. Alias queries resolve to the same listed party."
+  },
+  {
+   "id": "WLD-2026-11-23-006",
+   "change": "changes/2026-11-23-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261123",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "INTEGRAL PETRO ENERGY COMPANY",
+   "query_kind": "listed_alias",
+   "expected_party": "INTEGRAL PETRO ENERGY TRADING LLC",
+   "why": "One of two a.k.a. forms on the 2026-11-23 entity addition that drop the legal-form suffix; matchers that require the suffix miss it."
+  },
+  {
+   "id": "WLD-2026-11-23-007",
+   "change": "changes/2026-11-23-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261123",
+   "list": "SDN",
+   "assertion": "entity_match",
+   "query": "شرکت صرافی مینا فشکی و شرکا",
+   "query_kind": "listed_native_script_name",
+   "expected_party": "MINA FASHKI AND PARTNERS EXCHANGE COMPANY",
+   "why": "Arabic-script form printed on the 2026-11-23 entity addition; native-script queries resolve to the same listed party."
+  },
+  {
+   "id": "WLD-2026-11-23-008",
+   "change": "changes/2026-11-23-sdn-iran-designations.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261123",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "MELLAT EXCHANGE COMPANY",
+   "query_kind": "listed_name",
+   "expected_party": "MELLAT EXCHANGE COMPANY",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-11-23",
+    "state": "listed"
+   },
+   "why": "Added on 2026-11-23. Asserts only list membership as of 2026-11-23 for this named exchange company; the notice does not relate it to any other Mellat-named party."
   }
  ],
  "planned_case_kinds": [
