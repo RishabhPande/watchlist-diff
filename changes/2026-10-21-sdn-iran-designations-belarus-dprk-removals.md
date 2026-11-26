@@ -23,4 +23,6 @@ Also issued the same day: Iran GL GG and HH, Russia GL 131K, amended FAQs 1224 a
 
 ## Fixtures
 
-Five cases, `WLD-2026-10-21-001` to `-005` in `tests/regression-cases.json`. Keyed to names as quoted in the notice; OFAC record IDs are not printed in web notices (see README, known limitations).
+Twelve cases, `WLD-2026-10-21-001` to `-012` in `tests/regression-cases.json`. Keyed to names as quoted in the notice; OFAC record IDs are not printed in web notices (see README, known limitations).
+
+Cases `-006` to `-012`, added 2026-11-25 from the same notice, deepen delisting coverage with additional primary-name and native-script forms from the removed records: the second MOXING and HONGMAN records, LU Hezheng, the third RYBAKOU spelling record, and the Chinese Simplified and Cyrillic forms. Query strings are copied programmatically from the notice at their original codepoints, including compatibility characters (the Moxing Chinese form uses U+2F42 where standard text uses U+6587); consumers needing canonical string comparison should NFKC-normalize first.
