@@ -857,6 +857,118 @@
     "state": "listed"
    },
    "why": "Added on 2026-11-23. Asserts only list membership as of 2026-11-23 for this named exchange company; the notice does not relate it to any other Mellat-named party."
+  },
+  {
+   "id": "WLD-2026-10-21-006",
+   "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261021",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "LU, Hezheng",
+   "query_kind": "listed_name",
+   "expected_party": "LU, Hezheng",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-10-21",
+    "state": "not_listed"
+   },
+   "why": "Deleted under [DPRK3]; an individual with a short common-form name. Record-scoped only: no DOB, ID or address is asserted, and nothing is asserted about any other person sharing the name. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
+  },
+  {
+   "id": "WLD-2026-10-21-007",
+   "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261021",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "MOXING CARTOON",
+   "query_kind": "listed_alias",
+   "expected_party": "SHANGHAI MOXING CULTURAL MEDIA CO LTD",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-10-21",
+    "state": "not_listed"
+   },
+   "why": "Deleted under [DPRK3]; primary form of the second of two cross-listed records for one party (printed as a.k.a. of SHANGHAI MOXING CULTURAL MEDIA CO LTD, the expected_party here and in WLD-2026-10-21-003). Tests that both records are removed, not just one. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
+  },
+  {
+   "id": "WLD-2026-10-21-008",
+   "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261021",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "上海墨星⽂化传播有限公司",
+   "query_kind": "listed_native_script_name",
+   "expected_party": "SHANGHAI MOXING CULTURAL MEDIA CO LTD",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-10-21",
+    "state": "not_listed"
+   },
+   "why": "Deleted under [DPRK3]; exact Chinese Simplified form printed on the deleted entries, copied programmatically from the notice at its original codepoints (fifth character is the Kangxi-radical compatibility character U+2F42 where standard text uses U+6587); NFKC-normalize before canonical comparison. Exact-string lookup only, not evidence of cross-script matching. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
+  },
+  {
+   "id": "WLD-2026-10-21-009",
+   "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261021",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "SHANGHAI HONGMAN CARTOON AND ANIMATION DESIGN STUDIO",
+   "query_kind": "listed_alias",
+   "expected_party": "SHANGHAI HONGMAN ANIMATION DESIGN STUDIO",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-10-21",
+    "state": "not_listed"
+   },
+   "why": "Deleted under [DPRK3]; primary form of the second of two cross-listed records for one party (printed as a.k.a. of SHANGHAI HONGMAN ANIMATION DESIGN STUDIO, the expected_party here and in WLD-2026-10-21-004). Tests that both records are removed, not just one. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
+  },
+  {
+   "id": "WLD-2026-10-21-010",
+   "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261021",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "RYBAKOU, Andrei",
+   "query_kind": "listed_alias",
+   "expected_party": "RYBAKOV, Andrei Alekseevich",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-10-21",
+    "state": "not_listed"
+   },
+   "why": "Deleted under [BELARUS]; third of the three SDN records for this one person (with RYBAKOV, Andrei Alekseevich and RYBAKOU, Andrei Aliakseevich; see WLD-2026-10-21-005). Tests that every variant record is removed, not just one. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
+  },
+  {
+   "id": "WLD-2026-10-21-011",
+   "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261021",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "РЫБАКОВ, Андрей Алексеевич",
+   "query_kind": "listed_native_script_name",
+   "expected_party": "RYBAKOV, Andrei Alekseevich",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-10-21",
+    "state": "not_listed"
+   },
+   "why": "Deleted under [BELARUS]; exact Cyrillic form printed on the deleted entries. Exact-string lookup only, not evidence of cross-script matching. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
+  },
+  {
+   "id": "WLD-2026-10-21-012",
+   "change": "changes/2026-10-21-sdn-iran-designations-belarus-dprk-removals.md",
+   "source": "https://ofac.treasury.gov/recent-actions/20261021",
+   "list": "SDN",
+   "assertion": "list_membership",
+   "query": "РЫБАКОЎ, Андрэй Аляксеевіч",
+   "query_kind": "listed_native_script_name",
+   "expected_party": "RYBAKOV, Andrei Alekseevich",
+   "expected_membership": {
+    "list": "SDN",
+    "as_of": "2026-10-21",
+    "state": "not_listed"
+   },
+   "why": "Deleted under [BELARUS]; exact Belarusian Cyrillic form printed on the deleted entries. Exact-string lookup only, not evidence of cross-script matching. Asserts only: not on the SDN List as of 2026-10-21 per this notice. Says nothing about other lists or programs, and is not a clearance."
   }
  ],
  "planned_case_kinds": [
